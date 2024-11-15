@@ -36,10 +36,7 @@ public class Patient
     [MinLength(3)]
     [Column("password")]
     public string Password { get; set; }
-
-    // Navigation property for appointments
-    public virtual ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
-
+    
     public Patient(string name, DateTime birthdate, string contactNumber, string email, string password)
     {
         Name = name.Trim();

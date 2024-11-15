@@ -30,10 +30,6 @@ public class Appointment
     [ForeignKey("DoctorId")]
     public int DoctorId { get; set; }
 
-    // Navigation properties
-    public virtual Patient Patient { get; set; }
-    public virtual Doctor Doctor { get; set; }
-
     public Appointment(DateTime appointmentDate, string status, int patientId, int doctorId)
     {
         AppointmentDate = appointmentDate;
