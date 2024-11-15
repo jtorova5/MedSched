@@ -10,6 +10,7 @@ namespace MedSched.Controllers.V1.Appointments;
 [ApiController]
 [Route("api/v1/appointments")]
 [Tags("Appointments")]
+[Authorize]
 public class AppointmentsCreateController : AppointmentsController
 {
     public AppointmentsCreateController(IAppointmentRepository appointmentRepository) : base(appointmentRepository) { }

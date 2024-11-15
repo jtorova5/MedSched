@@ -9,6 +9,7 @@ namespace MedSched.Controllers.V1.Appointments;
 [ApiController]
 [Route("api/v1/appointments")]
 [Tags("Appointments")]
+[Authorize]
 public class AppointmentsDeleteController : AppointmentsController
 {
     public AppointmentsDeleteController(IAppointmentRepository appointmentRepository) : base(appointmentRepository) { }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MedSched")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f35b07bc94f267b0f3930cca67ed7d94def720a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3bbcea471d201531f329c1dcb64cc5776c185fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("MedSched")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MedSched")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

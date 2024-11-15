@@ -1,5 +1,6 @@
 using MedSched.Models;
 using MedSched.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -8,6 +9,7 @@ namespace MedSched.Controllers.V1.Patients;
 [ApiController]
 [Route("api/v1/patients")]
 [Tags("Patients")]
+[Authorize]
 public class PatientsGetController : PatientsController
 {
     public PatientsGetController(IPatientRepository patientRepository) : base(patientRepository) { }

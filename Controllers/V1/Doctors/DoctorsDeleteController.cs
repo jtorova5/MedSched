@@ -9,13 +9,13 @@ namespace MedSched.Controllers.V1.Doctors;
 [ApiController]
 [Route("api/v1/doctors")]
 [Tags("Doctors")]
+[Authorize]
 public class DoctorsDeleteController : DoctorsController
 {
     public DoctorsDeleteController(IDoctorRepository doctorRepository) : base(doctorRepository) { }
 
     // DELETE: api/v1/doctors/{id}
     [HttpDelete("{id}")]
-    [Authorize(Roles = "Admin")]
     [SwaggerOperation(
         Summary = "Removes a doctor by ID",
         Description = "Removes a specific doctor from the system based on their ID"

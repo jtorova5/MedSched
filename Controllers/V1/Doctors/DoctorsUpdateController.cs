@@ -10,6 +10,7 @@ namespace MedSched.Controllers.V1.Doctors;
 [ApiController]
 [Route("api/v1/doctors")]
 [Tags("Doctors")]
+[Authorize]
 public class DoctorsUpdateController : DoctorsController
 {
     public DoctorsUpdateController(IDoctorRepository doctorRepository) : base(doctorRepository) { }
