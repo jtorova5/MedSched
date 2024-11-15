@@ -3,6 +3,7 @@ using MedSched.Models;
 using MedSched.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MedSched.Controllers.V1.Appointments;
 
@@ -15,6 +16,10 @@ public class AppointmentsCreateController : AppointmentsController
 
     // POST: api/v1/appointments
     [HttpPost]
+    [SwaggerOperation(
+        Summary = "Adds a new appointment",
+        Description = "Adds a new appointment to the system"
+    )]
     public async Task<IActionResult> AddAppointment([FromBody] AppointmentDTO appointmentDto)
     {
         if (!ModelState.IsValid)

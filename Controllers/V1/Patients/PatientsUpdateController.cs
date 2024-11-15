@@ -3,6 +3,7 @@ using MedSched.Models;
 using MedSched.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MedSched.Controllers.V1.Patients;
 
@@ -15,6 +16,10 @@ public class PatientsUpdateController : PatientsController
 
     // PUT: api/v1/patients/{id}
     [HttpPut("{id}")]
+    [SwaggerOperation(
+        Summary = "Updates a patient by ID",
+        Description = "Updates a specific patient in the system based on their ID"
+    )]
     public async Task<IActionResult> UpdatePatient(int id, [FromBody] PatientDTO patientDto)
     {
         if (!ModelState.IsValid)

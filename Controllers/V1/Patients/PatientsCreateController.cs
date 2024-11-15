@@ -3,6 +3,7 @@ using MedSched.Models;
 using MedSched.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MedSched.Controllers.V1.Patients;
 
@@ -15,6 +16,10 @@ public class PatientsCreateController : PatientsController
 
     // POST: api/v1/patients
     [HttpPost]
+    [SwaggerOperation(
+        Summary = "Adds a new patient",
+        Description = "Adds a new patient to the system"
+    )]
     public async Task<IActionResult> AddPatient([FromBody] PatientDTO patientDto)
     {
         if (!ModelState.IsValid)

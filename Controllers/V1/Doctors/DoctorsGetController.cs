@@ -1,6 +1,7 @@
 using MedSched.Models;
 using MedSched.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MedSched.Controllers.V1.Doctors
 {
@@ -13,6 +14,10 @@ namespace MedSched.Controllers.V1.Doctors
 
         // GET: api/v1/doctors/{id}
         [HttpGet("{id}")]
+        [SwaggerOperation(
+            Summary = "Retrieves a doctor by ID",
+            Description = "Returns a specific doctor based on their ID"
+        )]
         public async Task<IActionResult> GetDoctor(int id)
         {
             var doctor = await _doctorRepository.GetDoctorById(id);
@@ -26,6 +31,10 @@ namespace MedSched.Controllers.V1.Doctors
 
         // GET: api/v1/doctors
         [HttpGet]
+        [SwaggerOperation(
+            Summary = "Retrieves all doctors",
+            Description = "Returns a list of all doctors"
+        )]
         public async Task<IActionResult> GetAllDoctors()
         {
             var doctors = await _doctorRepository.GetAllDoctors();

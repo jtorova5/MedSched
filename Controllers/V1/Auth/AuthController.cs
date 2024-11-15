@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.IdentityModel.Tokens.Jwt;
 using MedSched.Repositories;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MedSched.Controllers.V1.Auth;
 
 [ApiController]
 [Route("api/v1/auth")]
+[Tags("Authentication")]
 public class AuthController : ControllerBase
 {
     private readonly IAuthRepository _authService;
@@ -21,6 +23,10 @@ public class AuthController : ControllerBase
 
     // Login endpoint to authenticate both doctors and patients
     [HttpPost("login")]
+    [SwaggerOperation(
+            Summary = "Allows users to log in",
+            Description = "Log in and create a JWT token"
+    )]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         // Call AuthService to get the JWT token based on the provided email and password

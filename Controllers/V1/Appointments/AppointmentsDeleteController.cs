@@ -2,6 +2,7 @@ using MedSched.Models;
 using MedSched.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MedSched.Controllers.V1.Appointments;
 
@@ -14,6 +15,10 @@ public class AppointmentsDeleteController : AppointmentsController
 
     // DELETE: api/v1/appointments/{id}
     [HttpDelete("{id}")]
+    [SwaggerOperation(
+        Summary = "Removes an appointment by ID",
+        Description = "Removes a specific appointment from the system based on their ID"
+    )]
     public async Task<IActionResult> DeleteAppointment(int id)
     {
         var appointment = await _appointmentRepository.GetAppointmentById(id);
